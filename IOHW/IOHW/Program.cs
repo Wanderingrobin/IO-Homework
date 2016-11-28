@@ -48,13 +48,14 @@ namespace IOHW
             List<Plants> Nursery = new List<Plants>();
 
             XmlDocument doc = new XmlDocument();
-            doc.Load("C:\\Users\\Bishop Clara\\Documents\\plant_catalog.xml");
+            doc.Load("C:\\Users\\Bishop Clara\\Source\\Repos\\IO-Homework\\IOHW\\IOHW\\plant_catalog.xml");
 
-            XmlNode catnode = doc.DocumentElement.SelectSingleNode("/catalog");
+            XmlNode catNode = doc.DocumentElement.SelectSingleNode("/catalog");
 
-            foreach(XmlNode child in catnode.ChildNodes)
+            foreach(XmlNode child in catNode.ChildNodes)
             {
                  Plants plant = new Plants();
+
                 foreach(XmlNode grandchild in child.ChildNodes)
                 {
                     switch (grandchild.Name)
